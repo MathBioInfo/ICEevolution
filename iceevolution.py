@@ -78,6 +78,9 @@ for t in tqdm(range(timeiteration)):  # time loop
     nonexciable = pd.DataFrame([{'Gen':t, 'Number':nonconjable}])
     GenVnonxeciable = GenVnonxeciable.append(nonexciable) 
     #################################################################
+    if conjable == 0: # use this if we are using closed system (rF = 0)
+    	print('"There is no more inducible phage in the population at generation ',t)
+    	break
     re_enter = [] # keep track of ICE that can renter into genome
     congplasmid =[] # keep track oof ICE not capable of entering into genome
     for i in range (len(congsum)-1):
